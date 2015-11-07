@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class DashBoardController extends Controller
+class TransactionsController extends Controller
 {
 
     public function __construct()
@@ -17,6 +17,7 @@ class DashBoardController extends Controller
         parent::__construct();
     }
 
+
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +25,7 @@ class DashBoardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        return view('dashboard.transaction.index');
     }
 
     /**
@@ -34,7 +35,7 @@ class DashBoardController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.transaction.create');
     }
 
     /**

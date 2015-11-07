@@ -49,3 +49,6 @@ Route::get('/dashboard', [
     'as'    => 'dashboard',
     'uses'  => 'DashBoardController@index'
 ]);
+
+// Transactions
+Route::resource('/transaction', 'TransactionsController');

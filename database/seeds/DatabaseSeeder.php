@@ -14,8 +14,17 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->call(UserTableSeeder::class);
 
         Model::reguard();
+    }
+
+}
+
+class UserTableSeeder extends Seeder
+{
+    public function run()
+    {
+        factory(App\User::class, 1)->create();
     }
 }
