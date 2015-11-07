@@ -6,7 +6,8 @@
 
 @section('content')
 
-    @include('dashboard.includes.contents.create')
+    @include('dashboard.includes.contents.transaction')
 
 @endsection
+
 

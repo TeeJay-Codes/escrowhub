@@ -1,7 +1,14 @@
-.content{
+.content
+{
     padding-top: 10px;
     padding-bottom: 20px;
     background: #eee;
     margin: 0px auto;
     text-align: center;
 }
+
+.content table
+{
+  margin: 0px auto;
+}
+

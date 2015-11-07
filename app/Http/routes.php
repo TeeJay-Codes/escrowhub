@@ -15,6 +15,18 @@ Route::get('/', function () {
     return view('dashboard.pages.index');
 });
 
+Route::get('/transaction', function () {
+    return view('dashboard.transaction.index');
+});
+
+Route::get('/transaction/create', function () {
+    return view('dashboard.transaction.create');
+});
+
+Route::get('/transaction/{id}', function () {
+    return view('dashboard.transaction.show_transaction');
+});
+
 
 // Authentication routes...
 Route::get('/login', [
