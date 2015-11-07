@@ -14,3 +14,37 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// Authentication routes...
+Route::get('/login', [
+    'as'    => 'login',
+    'uses'  => 'Auth\AuthController@getLogin'
+]);
+
+Route::post('/login',  [
+    'as'    => 'login',
+    'uses'  => 'Auth\AuthController@postLogin'
+]);
+
+Route::get('/logout',  [
+    'as'    => 'logout',
+    'uses'  => 'Auth\AuthController@getLogout'
+]);
+
+// Registration routes...
+Route::get('/register', [
+    'as'    =>   'register',
+    'uses'  =>   'Auth\AuthController@getRegister'
+]);
+
+Route::post('/register', [
+    'as'    => 'register',
+    'uses'  => 'Auth\AuthController@postRegister'
+]);
+
+
+// Dashboard Route Group
+Route::get('/dashboard', function() {
+   return view('dashboard.index');
+});
