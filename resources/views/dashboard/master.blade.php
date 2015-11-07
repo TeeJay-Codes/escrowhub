@@ -30,6 +30,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{!! asset('assets/material.min.css') !!}">
         <link rel="stylesheet" href="{!! asset('assets/styles.css') !!}">
+        <link rel="stylesheet" href="{!! asset('assets/custom.css') !!}">
         <style>
             #view-source 
             {
