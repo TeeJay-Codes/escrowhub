@@ -23,6 +23,10 @@ Route::get('/transaction/create', function () {
     return view('dashboard.transaction.create');
 });
 
+Route::get('/transaction/{id}', function () {
+    return view('dashboard.transaction.show_transaction');
+});
+
 
 // Authentication routes...
 Route::get('/login', [

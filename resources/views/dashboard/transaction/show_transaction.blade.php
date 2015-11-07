@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-
     @include('dashboard.includes.contents.create')
-
 @endsection
 
