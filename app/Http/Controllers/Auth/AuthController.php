@@ -24,6 +24,22 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
+     * URI to redirect a user after a successful login
+     *
+     * @var string
+     */
+    protected $redirectPath = '/dashboard';
+
+    /**
+     * URI to login
+     *
+     * @var string
+     */
+    protected $loginPath = '/login';
+
+    protected $username     = 'username';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
@@ -31,6 +47,8 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+
+        parent::__construct();
     }
 
     /**
@@ -42,9 +60,12 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'username'  => 'required|max:255|unique:users',
+            'email'     => 'required|email|max:255|unique:users',
+            'password'  => 'required|confirmed|min:6',
+            'firstname' => 'required',
+            'lastname'  => 'required',
+            'telephone' => 'required|numeric',
         ]);
     }
 
@@ -57,9 +78,12 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'username'      => $data['username'],
+            'firstname'     => $data['firstname'],
+            'lastname'      => $data['lastname'],
+            'email'         => $data['email'],
+            'password'      => bcrypt($data['password']),
+            'telephone'     => $data['telephone'],
         ]);
     }
 }

@@ -45,6 +45,7 @@ Route::post('/register', [
 
 
 // Dashboard Route Group
-Route::get('/dashboard', function() {
-   return view('dashboard.index');
-});
+Route::get('/dashboard', [
+    'as'    => 'dashboard',
+    'uses'  => 'DashBoardController@index'
+]);
